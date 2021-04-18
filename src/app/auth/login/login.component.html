@@ -1,0 +1,23 @@
+<form [formGroup]="loginForm" autocomplete="off" (ngSubmit)="onSubmit()">
+  <div class="form-control-wrapper">
+    <mat-form-field>
+      <input type="text" matInput formControlName="username">
+      <mat-error>This field is required!</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-control-wrapper">
+    <mat-form-field>
+      <input type="password" matInput formControlName="password">
+    </mat-form-field>
+  </div>
+  <div class="form-control-wrapper">
+    <button type="button" mat-flat-button color="warn" (click)="onReset(resetTmp)">Reset</button>
+    <button type="submit" mat-raised-button>Login</button>
+  </div>
+</form>
+
+<ng-template #resetTmp>
+  <h3>ban co muon reset ko?</h3>
+  <button mat-raised-button>No</button>
+  <button mat-raised-button color="primary">Yes</button>
+</ng-template>
